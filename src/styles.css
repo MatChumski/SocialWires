@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&display=swap');
+
+:root
+{
+    --main-yellow: rgb(249, 253, 109);
+}
+
+html
+{
+    background-color: #141c2c;
+
+    font-family: 'Poppins', sans-serif;
+
+}

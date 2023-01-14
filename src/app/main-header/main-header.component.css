@@ -1,0 +1,14 @@
+.nav-header
+{
+    color: var(--main-yellow);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.options-end
+{
+    display: flex;
+
+    gap: 12px;
+}
