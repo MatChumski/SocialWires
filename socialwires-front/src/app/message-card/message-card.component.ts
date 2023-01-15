@@ -13,18 +13,16 @@ export class MessageCardComponent implements OnInit{
 
   @Input() title:string = "Title";
   @Input() message:string = "Content";
-  username?:string = "";
-  date:string = "";
-  
   @Input() checkComment:boolean = true;
-
-  newComment:string = "";
-
   @Input() msg:MessageI | undefined
 
-  localUsername:string;
+  username?:string = "";
+  date:string = ""; 
 
-  commentsList:Comment[] = []
+  newComment:string = "";
+  commentsList:Comment[] = [];
+
+  localUsername:string;
 
   constructor(private messagesService:MessagesService)
   {
@@ -58,6 +56,9 @@ export class MessageCardComponent implements OnInit{
 
   }
 
+  /**
+   * Loads all the comment of a message
+   */
   loadComments(newMessage:MessageI)
   {
     this.commentsList = [];
@@ -78,6 +79,10 @@ export class MessageCardComponent implements OnInit{
       }
     }
 
+    /**
+     * Reverses the list so it shows the most
+     * recent elements first
+     */
     this.commentsList.reverse();
   }
 

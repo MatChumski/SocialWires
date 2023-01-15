@@ -30,6 +30,10 @@ export class LoginComponent implements OnInit{
 
   }
 
+  /**
+   * Saves the session in local storage to use it
+   * in any other page
+   */
   setSession(result: any)
   {
     localStorage.setItem('access_token', result.access_token);
@@ -68,6 +72,7 @@ export class LoginComponent implements OnInit{
           },
           next: (response) =>
           {
+            // On success, navigates to "Create Message" page
             this.setSession(response);
             alert("Login succesful");
             this.router.navigate(['messages/create']);

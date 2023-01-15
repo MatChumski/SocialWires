@@ -24,6 +24,8 @@ export class CreateMessageComponent {
   share()
   {
 
+    // Check that all the inputs are filled
+
     let valid = true;
     
     this.newTitle = this.newTitle.trim();

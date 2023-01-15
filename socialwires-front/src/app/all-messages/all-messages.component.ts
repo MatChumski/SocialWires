@@ -43,6 +43,12 @@ export class AllMessagesComponent implements OnInit{
         },
         next: (response) =>
         {
+
+          /**
+           * The list is reversed so that it shows 
+           * the elements starting from the most recent one
+           */
+
           this.messagesList = [...response];
           this.messagesList.reverse();
           

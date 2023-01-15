@@ -26,6 +26,12 @@ export class MainHeaderComponent implements OnInit {
   ngOnInit()
   {
 
+    /**
+     * The header checks that the user is logged in,
+     * if it isn't, the user is sent back to
+     * homepage
+     */
+
     const accessToken = localStorage.getItem("access_token");
     this.username = <string>localStorage.getItem("username");
 

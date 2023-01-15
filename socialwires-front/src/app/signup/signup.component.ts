@@ -43,6 +43,9 @@ export class SignupComponent implements OnInit {
 
   signup()
   {
+    /**
+     * Checks that all the fields are filled
+     */
     let valid = true;
 
     this.nickname = this.nickname.trim();
