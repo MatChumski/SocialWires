@@ -3,7 +3,7 @@
     <app-main-header></app-main-header>
 
     <div class="main__title">
-        My Messages
+        All Messages
     </div>
 
     <div class="messages__form__container">
@@ -12,20 +12,35 @@
 
             <div class="form__entry">
                 <div class="entry__title">
+                    What Search?
+                </div>
+                <input type="text" class="entry entry__search" [(ngModel)]="filterSearch" (keyup.enter)="search()">
+
+            </div>
+
+            <div class="form__entry">
+                <div class="entry__title">
                     Date Select
                 </div>
                 <input type="date" class="entry" [(ngModel)]="filterDate">
-                
+
             </div>
+
         </div>
-        
+
     </div>
 
-    <div class="messages__list">
+    <div class="messages__list" *ngIf="messagesList.length > 0; else nothingFound">
         <ng-template ngFor let-msg [ngForOf]="messagesList" let-i="index">
             <app-message-card [msg]="msg"></app-message-card>
-            <hr style="width: 100%;">
+            <hr style="width: 100%">
         </ng-template>
     </div>
+
+    <ng-template #nothingFound>
+        <div class="alert">
+            Nothing found
+        </div>
+    </ng-template>
 
 </body>

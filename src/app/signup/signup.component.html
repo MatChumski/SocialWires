@@ -26,7 +26,7 @@
                     </div>
 
                     <input type="text" class="entry" placeholder="Nickname" [(ngModel)]="nickname"
-                        (input)="emptyNickname = false">
+                        (input)="emptyNickname = false" form="signup_form">
 
                     <div class="entry__alert" *ngIf="emptyNickname">
                         Please fill in this field
@@ -42,7 +42,7 @@
                     </div>
 
                     <input type="text" class="entry" placeholder="Full Name" [(ngModel)]="fullname"
-                        (input)="emptyFullname= false">
+                        (input)="emptyFullname= false" form="signup_form">
 
                     <div class="entry__alert" *ngIf="emptyFullname">
                         Please fill in this field
@@ -58,7 +58,7 @@
                     </div>
 
                     <input type="text" class="entry" placeholder="example@email.com" [(ngModel)]="email"
-                        (input)="emptyEmail = false">
+                        (input)="emptyEmail = false" form="signup_form">
 
                     <div class="entry__alert" *ngIf="emptyEmail">
                         Please fill in this field
@@ -74,7 +74,7 @@
                     </div>
 
                     <input type="password" class="entry" placeholder="Password" [(ngModel)]="password"
-                        (input)="emptyPassword= false">
+                        (input)="emptyPassword= false" form="signup_form">
 
                     <div class="entry__alert" *ngIf="emptyPassword">
                         Please fill in this field
@@ -90,7 +90,9 @@
                     </div>
 
                     <input type="password" class="entry" placeholder="Repeat Password" [(ngModel)]="repeatPassword"
-                        (input)="emptyRepeatPassword = false; passwordsMatch = true" [ngStyle]="{borderColor: ((password != repeatPassword) && (!emptyRepeatPassword)) ? 'red' : 'black'}">
+                        (input)="emptyRepeatPassword = false; passwordsMatch = true"
+                        [ngStyle]="{borderColor: ((password != repeatPassword) && (!emptyRepeatPassword)) ? 'red' : 'black'}"
+                        form="signup_form">
 
                     <div class="entry__alert" *ngIf="emptyRepeatPassword">
                         Please fill in this field
@@ -105,10 +107,12 @@
 
             <div class="form__buttons">
 
-                <button class="button__create" (click)="signup()">Create</button>
+                <button class="button__create" (click)="signup()" form="signup_form">Create</button>
 
             </div>
 
         </div>
+
+        <form id="signup_form"></form>
     </div>
 </body>

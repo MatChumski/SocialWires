@@ -60,13 +60,13 @@ body
     width: 100%;
     border-radius: 10px;
 
-    background-color: var(--main-gray);
+    background-color: white;
 }
 .comment__top
 {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: #b9b9b9;
+    background-color: var(--second-gray);
     min-height: 20px !important;
 }
 .comment__text
@@ -83,6 +83,12 @@ body
     border: none;
     background-color: transparent;
     font-size: 8pt;
+
+    outline: none;
+}
+.comment__text > input:hover
+{
+
 }
 
 .comment__bottom
@@ -98,6 +104,7 @@ body
 .comment__bottom > img
 {
     width: 50%;
+    max-width: max-content;
     height: 20%;
 }
 .comment__bottom > button
@@ -106,4 +113,15 @@ body
     border: none;
     border-radius: 30px;
     font-size: 8pt;
+}
+.comment__bottom > button:disabled
+{
+    filter: opacity(50%);
+}
+
+.comment__list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }

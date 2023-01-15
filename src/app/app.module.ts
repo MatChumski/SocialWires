@@ -15,13 +15,16 @@ import { CreateMessageComponent } from './create-message/create-message.componen
 import { AuthInterceptor } from './auth.interceptor';
 import { MessageCardComponent } from './message-card/message-card.component';
 import { MyMessagesComponent } from './my-messages/my-messages.component';
+import { CommentComponent } from './comment/comment.component';
+import { AllMessagesComponent } from './all-messages/all-messages.component';
 
 const appRoutes:Routes=[
   {path:'', component:MainViewComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'messages/create', component:CreateMessageComponent},
-  {path:'messages/me', component:MyMessagesComponent}
+  {path:'messages/me', component:MyMessagesComponent},
+  {path:'messages/all', component:AllMessagesComponent}
 ]
 
 @NgModule({
@@ -33,7 +36,9 @@ const appRoutes:Routes=[
     SignupComponent,
     CreateMessageComponent,
     MessageCardComponent,
-    MyMessagesComponent
+    MyMessagesComponent,
+    CommentComponent,
+    AllMessagesComponent
   ],
   imports: [
     BrowserModule,

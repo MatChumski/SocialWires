@@ -1,50 +1,58 @@
 <body>
     <div class="card__container">
-    
+
         <div class="card__title">
-    
+
             {{title}}
-    
+
         </div>
-    
+
         <div class="card__message">
-    
+
             {{message}}
-    
+
         </div>
-    
+
         <div class="card__bottom">
-    
+
             <div class="card__date">
                 {{date}}
             </div>
-            
+
             <div class="card__user">
                 {{username}}
             </div>
-    
+
         </div>
-    
+
     </div>
-    
-    <div class="comment__container">    
-       
-        <div class="comment__top">
-        </div>
-        
-        <div class="comment__text">
-            <input type="text" name="" id="" [placeholder]="'Comment on the publication of ' + username">
-        </div>
 
-        <div class="comment__bottom">
+    <div class="comment" *ngIf="(!checkComment) || (username != localUsername)">
 
-            <img src="../../assets/icon/Frame 1.png" alt="">
-            
-            <button>
-                Send
-            </button>
+        <div class="comment__container">
+
+            <div class="comment__top">
+            </div>
+
+            <div class="comment__text">
+                <input type="text" name="" id="" [placeholder]="'Comment on the publication of ' + username"
+                    [disabled]="(username == localUsername) ? 'true' : 'false'" [(ngModel)]="newComment">
+            </div>
+
+            <div class="comment__bottom">
+
+                <img src="../../assets/icon/Frame 1.png" alt="">
+
+                <button (click)="createComment()" [disabled]="!newComment">
+                    Send
+                </button>
+
+            </div>
 
         </div>
-        
+    </div>
+
+    <div class="comment__list" *ngIf="commentsList.length > 0">
+        <app-comment *ngFor="let comment of commentsList" [comment]="comment"></app-comment>
     </div>
 </body>

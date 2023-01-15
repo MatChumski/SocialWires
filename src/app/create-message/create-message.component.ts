@@ -46,17 +46,13 @@ export class CreateMessageComponent {
       this.messagesService.createMessage(this.newTitle, this.newMessage)
       .subscribe(
         {
-          complete: () =>
-          {
-            console.log("complete");
-          },
           error: (error) =>
           {
-            console.error("error: " + error);
+            alert("Something went wrong, please try again");
           },
           next: (response) =>
           {
-            console.log(response);
+            alert("Message created successfully, you can check it out on 'My Messages'");
           }
         }
       );

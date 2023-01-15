@@ -1,0 +1,19 @@
+.comment__container
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    border-radius: 10px;
+
+    background-color: white;
+
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.comment__uid
+{
+    font-size: 6pt;
+    color: gray;
+}

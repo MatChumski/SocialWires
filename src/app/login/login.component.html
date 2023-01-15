@@ -17,7 +17,7 @@
             </div>
 
             <div class="form">
-
+                
                 <!-- Username -->
                 <div class="form__entry">
 
@@ -26,7 +26,7 @@
                     </div>
 
                     <input type="text" class="entry" placeholder="Username" [(ngModel)]="username"
-                        (input)="emptyUsername = false">
+                        (input)="emptyUsername = false" form="login_form">
 
                     <div class="entry__alert" *ngIf="emptyUsername">
                         Please fill in this field
@@ -42,22 +42,26 @@
                     </div>
 
                     <input type="password" class="entry" placeholder="Password" [(ngModel)]="password"
-                        (input)="emptyPassword= false">
+                        (input)="emptyPassword= false" form="login_form">
 
                     <div class="entry__alert" *ngIf="emptyPassword">
                         Please fill in this field
                     </div>
 
                 </div>
+            
 
             </div>
 
             <div class="form__buttons">
 
-                <button class="button__create" (click)="login()">Create</button>
+                <button class="button__create" (click)="login()" form="login_form">Sign In</button>
 
             </div>
 
+            <form id="login_form"></form>
+
         </div>
+        
     </div>
 </body>

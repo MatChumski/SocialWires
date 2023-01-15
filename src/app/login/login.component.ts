@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   username:string = "";
   emptyUsername:boolean = false;
@@ -15,8 +16,17 @@ export class LoginComponent {
   password:string = "";
   emptyPassword:boolean = false;
 
-  constructor(private userService:UserService)
+  constructor(private userService:UserService, private router:Router)
   {
+
+  }
+
+  ngOnInit(): void {
+    
+    if (localStorage.getItem("access_token") && localStorage.getItem("username"))
+    {
+      this.router.navigate(['messages/create']);
+    }
 
   }
 
@@ -52,30 +62,15 @@ export class LoginComponent {
       this.userService.login(this.username, this.password)
       .subscribe(
         {
-          complete: () => 
-          {
-            console.log("complete");
-          },
           error: (error) =>
           {
-            switch(error.message)
-            {
-              default:
-                alert("Unknown Error: " + error);
-            }
+            alert("Wrong Credentials")
           },
           next: (response) =>
           {
-            try
-            {
-              this.setSession(response);
-              alert("Login succesful")
-            }
-            catch (e)
-            {
-              alert("Something went wrong " + e);
-
-            }
+            this.setSession(response);
+            alert("Login succesful");
+            this.router.navigate(['messages/create']);
           }
         }
       );  

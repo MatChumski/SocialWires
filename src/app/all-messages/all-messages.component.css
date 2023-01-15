@@ -1,0 +1,19 @@
+body
+{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.messages__list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.entry__search
+{
+    background: scroll 95% 7px;
+    background-image: url("../../assets/icon/search-outline.png");
+    background-repeat: no-repeat;    
+}

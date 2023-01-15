@@ -31,8 +31,7 @@ export class MainHeaderComponent implements OnInit {
 
     if (!accessToken || !this.username)
     {
-      alert("Not logged in");
-      this.router.navigate(['']);
+      this.router.navigate(['login']);
     }
 
     this.messagesService.getAllMessages()
@@ -61,6 +60,12 @@ export class MainHeaderComponent implements OnInit {
   {
     this.isMenuActive = !this.isMenuActive;
     this.isMessagesActive = false;
+  }
+
+  public signOut()
+  {
+    localStorage.clear();
+    this.router.navigate(['']);
   }
 
 }

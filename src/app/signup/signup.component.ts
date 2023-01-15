@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { UserService, UserSignup } from '../user.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserService, UserSignup } from '../user.service';
   styleUrls: ['./signup.component.css']
 })
 
-export class SignupComponent {
+export class SignupComponent implements OnInit {
 
   nickname:string = "";
   emptyNickname:boolean = false;
@@ -26,12 +27,19 @@ export class SignupComponent {
 
   passwordsMatch:boolean = true;
   
-  constructor(private userService:UserService)
+  constructor(private userService:UserService, private router:Router)
   {
 
   }
 
+  ngOnInit(): void {
+    
+    if (localStorage.getItem("access_token") && localStorage.getItem("username"))
+    {
+      this.router.navigate(['messages/create']);
+    }
 
+  }
 
   signup()
   {
@@ -103,7 +111,8 @@ export class SignupComponent {
           },
           next: () =>
           {
-            alert("Account created successfully");
+            alert("Account created successfully, now you can log in");
+            this.router.navigate(['login']);
           }
         }
       );        

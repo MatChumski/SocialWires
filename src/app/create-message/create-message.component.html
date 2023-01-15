@@ -25,8 +25,9 @@
                     Message
                 </div>
                 <textarea class="entry entry--big" style="resize: none;"
-                    placeholder="Create a new message to share with your friends"
-                    [(ngModel)]="newMessage" (input)="emptyNewMessage = false">
+                    placeholder="Create a new message to share with your friends. Max 700 chars"
+                    [(ngModel)]="newMessage" (input)="emptyNewMessage = false"
+                    maxlength="700">
                 </textarea>
                 <div class="alert" *ngIf="emptyNewMessage">
                     Please fill in this field
@@ -41,6 +42,6 @@
             </div>
         </div>
 
-        <app-message-card style="width: 50%;" [title]="newTitle" [message]="newMessage"></app-message-card>
+        <app-message-card style="width: 50%;" [title]="newTitle" [message]="newMessage" [checkComment]="false"></app-message-card>
 
     </div>
