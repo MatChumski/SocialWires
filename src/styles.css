@@ -5,12 +5,57 @@
 :root
 {
     --main-yellow: rgb(249, 253, 109);
+    --hover-yellow: rgb(253, 255, 191);
+}
+
+*
+{
+    font-family: 'Poppins', sans-serif;
 }
 
 html
 {
     background-color: #141c2c;
+}
 
-    font-family: 'Poppins', sans-serif;
+button
+{
+    cursor: pointer;
+}
 
+a,
+a:link, 
+a:visited
+{
+    text-decoration: none;
+    color: black;
+}
+
+/* UTILITIES */
+
+.text-left
+{
+    text-align: left;
+}
+.text-right
+{
+    text-align: right;
+}
+
+.grid-2-1
+{
+    grid-template-columns: 2fr 1fr;
+}
+.grid-1-2
+{
+    grid-template-columns: 1fr 2fr;
+}
+
+.self-end
+{
+    align-self: flex-end;
+}
+.self-start
+{
+    align-self: flex-start;
 }

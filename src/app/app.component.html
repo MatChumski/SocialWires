@@ -1,9 +1,2 @@
 
-<ng-template *ngIf="userLoggedIn; else main_view" >
-  <app-main-header></app-main-header>
-
-</ng-template>
-
-<ng-template #main_view>
-  <app-main-view></app-main-view>
-</ng-template>
+<router-outlet></router-outlet>
