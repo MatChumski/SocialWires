@@ -1,0 +1,46 @@
+<body>
+    <app-main-header></app-main-header>
+
+    <div class="main__title">
+        Create message
+    </div>
+
+    <div class="messages__form__container">
+
+        <div class="messages__form">
+            <div class="form__entry">
+
+                <div class="entry__title">
+                    Message title
+                </div>
+                <input type="text" class="entry" placeholder="Talk about me" [(ngModel)]="newTitle" (input)="emptyNewTitle = false">
+                <div class="alert" *ngIf="emptyNewTitle">
+                    Please fill in this field
+                </div>
+
+            </div>
+
+            <div class="form__entry">
+                <div class="entry__title">
+                    Message
+                </div>
+                <textarea class="entry entry--big" style="resize: none;"
+                    placeholder="Create a new message to share with your friends"
+                    [(ngModel)]="newMessage" (input)="emptyNewMessage = false">
+                </textarea>
+                <div class="alert" *ngIf="emptyNewMessage">
+                    Please fill in this field
+                </div>
+                
+            </div>
+
+            <div class="messages__form__buttons">
+    
+                <button class="main__button" (click)="share()">Share</button>
+    
+            </div>
+        </div>
+
+        <app-message-card style="width: 50%;" [title]="newTitle" [message]="newMessage"></app-message-card>
+
+    </div>

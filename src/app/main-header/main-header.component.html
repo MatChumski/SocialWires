@@ -1,13 +1,90 @@
 <nav class="nav-header">
     <div class="logo">
-        LOGO HERE
+        <img src="../../assets/img/Group 2.png" alt="">
     </div>
-    <div class="options-end">
-        <div>
-            el1
+    <div class="nav__end">
+        <div class="messages">
+            <ng-template #withMessages [ngIf]="messagesList.length > 0" [ngIfElse]="emptyMessages">
+                <div class="messages__icon">
+                    <div class="icon__counter">
+                        <span>{{messagesList.length}}</span>
+                    </div>                     
+                    <img src="../../assets/icon/chatbox-ellipses-1.png" alt="a" class="nav__item" (click)="toggleMessagesActive()">
+                </div>
+            </ng-template>
+
+            <ng-template #emptyMessages>
+                <img src="../../assets/icon/chatbox-ellipses.png" alt="">
+            </ng-template>
+
+            <div class="messages__dropdown" *ngIf="isMessagesActive">
+                <div class="messages__title">
+                    Recent Posts
+                </div>
+                <ul class="post__list">
+
+                    <ng-template ngFor let-message [ngForOf]="messagesList" let-i="index">
+                        
+                        <li class="post__list__item">
+                            <div class="post__item__title">
+                                {{message.title}}
+                            </div>
+                            <div class="post__item__content">
+                                {{message.text}}
+                            </div>
+                        </li>
+
+                    </ng-template>
+
+                </ul>
+            </div>
         </div>
-        <div>
-            el2
+        <div class="menu">
+            <img src="../../assets/icon/menu.png" alt="" class="nav__item" (click)="toggleMenuActive()">
+            <div class="menu__dropdown" *ngIf="isMenuActive">
+                <div class="menu__title">
+                    {{username}}
+                </div>
+                <ul class="menu__list">
+
+                    <li class="menu__list__item">
+                        <a href="messages/create">
+                        <img src="../../assets/icon/create.png" alt="">
+                        <div class="menu__item__title">
+                                Create Messages
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="menu__list__item">
+                        <a href="messages/me">
+                        <img src="../../assets/icon/send.png" alt="">
+                        <div class="menu__item__title">
+                                My Messages
+                            </div>
+                        </a>
+                        </li>
+
+                    <li class="menu__list__item">
+                        <a href="messages/all">
+                        <img src="../../assets/icon/chatbubbles-sharp.png" alt="">
+                        <div class="menu__item__title">
+                                See all messages
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="menu__list__item">
+                        <a href="">
+                            <img src="../../assets/icon/log-in-sharp.png" alt="">
+                            <div class="menu__item__title">
+                                Logout
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

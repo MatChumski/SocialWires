@@ -6,11 +6,19 @@
 {
     --main-yellow: rgb(249, 253, 109);
     --hover-yellow: rgb(253, 255, 191);
+
+    --main-gray: rgb(243, 245, 249);
+    --hover-gray: rgb(226, 229, 233);
+    --second-gray: rgb(217, 217, 217);
+
+    --font-yellow: rgb(200, 204, 89);
 }
 
 *
 {
     font-family: 'Poppins', sans-serif;
+
+    box-sizing: border-box;
 }
 
 html
@@ -29,6 +37,16 @@ a:visited
 {
     text-decoration: none;
     color: black;
+}
+
+.main__title
+{
+    font-weight: bold;
+    color: var(--main-yellow);
+
+    font-size: 24pt;
+
+    margin-bottom: 20px;
 }
 
 /* UTILITIES */

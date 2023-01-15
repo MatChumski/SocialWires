@@ -1,0 +1,109 @@
+body
+{
+    width: 100%;
+    height: 100%;
+
+    margin: 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card__container
+{
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--second-gray);
+
+    height: 100%;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+}
+.card__title
+{
+
+    font-weight: bold;
+    font-size: 16pt;
+
+}
+.card__message
+{
+
+}
+.card__bottom
+{
+    margin-top: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.card__date
+{
+    font-size: 10pt;
+    color: rgb(132, 132, 132);
+}
+.card__user
+{
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.comment__container
+{
+    width: 100%;
+    border-radius: 10px;
+
+    background-color: var(--main-gray);
+}
+.comment__top
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #b9b9b9;
+    min-height: 20px !important;
+}
+.comment__text
+{
+    padding-left: 12px;
+    padding-right: 12px;
+
+    width: 100%;
+}
+.comment__text > input
+{
+    width: 100%;
+
+    border: none;
+    background-color: transparent;
+    font-size: 8pt;
+}
+
+.comment__bottom
+{
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comment__bottom > img
+{
+    width: 50%;
+    height: 20%;
+}
+.comment__bottom > button
+{
+    background-color: #b9b9b9;
+    border: none;
+    border-radius: 30px;
+    font-size: 8pt;
+}

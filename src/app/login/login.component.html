@@ -1,1 +1,63 @@
-<p>login works!</p>
+<body>
+    <div class="container">
+        <div class="container__top">
+            <div class="banner">
+                <img src="../../assets/img/WiresBanner.png" alt="">
+            </div>
+            <div class="title">
+                Welcome to Wires
+            </div>
+
+        </div>
+
+        <div class="form__container">
+
+            <div class="form__title">
+                Log In
+            </div>
+
+            <div class="form">
+
+                <!-- Username -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        Username
+                    </div>
+
+                    <input type="text" class="entry" placeholder="Username" [(ngModel)]="username"
+                        (input)="emptyUsername = false">
+
+                    <div class="entry__alert" *ngIf="emptyUsername">
+                        Please fill in this field
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        Password
+                    </div>
+
+                    <input type="password" class="entry" placeholder="Password" [(ngModel)]="password"
+                        (input)="emptyPassword= false">
+
+                    <div class="entry__alert" *ngIf="emptyPassword">
+                        Please fill in this field
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form__buttons">
+
+                <button class="button__create" (click)="login()">Create</button>
+
+            </div>
+
+        </div>
+    </div>
+</body>

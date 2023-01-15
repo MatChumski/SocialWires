@@ -1,1 +1,114 @@
-<p>signup works!</p>
+<body>
+    <div class="container">
+        <div class="container__top">
+            <div class="banner">
+                <img src="../../assets/img/WiresBanner.png" alt="">
+            </div>
+            <div class="title">
+                Welcome to Wires
+            </div>
+
+        </div>
+
+        <div class="form__container">
+
+            <div class="form__title">
+                Sign Up
+            </div>
+
+            <div class="form">
+
+                <!-- Nickname -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        Nickname
+                    </div>
+
+                    <input type="text" class="entry" placeholder="Nickname" [(ngModel)]="nickname"
+                        (input)="emptyNickname = false">
+
+                    <div class="entry__alert" *ngIf="emptyNickname">
+                        Please fill in this field
+                    </div>
+
+                </div>
+
+                <!-- Full Name -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        Full Name
+                    </div>
+
+                    <input type="text" class="entry" placeholder="Full Name" [(ngModel)]="fullname"
+                        (input)="emptyFullname= false">
+
+                    <div class="entry__alert" *ngIf="emptyFullname">
+                        Please fill in this field
+                    </div>
+
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        E-Mail
+                    </div>
+
+                    <input type="text" class="entry" placeholder="example@email.com" [(ngModel)]="email"
+                        (input)="emptyEmail = false">
+
+                    <div class="entry__alert" *ngIf="emptyEmail">
+                        Please fill in this field
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        Password
+                    </div>
+
+                    <input type="password" class="entry" placeholder="Password" [(ngModel)]="password"
+                        (input)="emptyPassword= false">
+
+                    <div class="entry__alert" *ngIf="emptyPassword">
+                        Please fill in this field
+                    </div>
+
+                </div>
+
+                <!-- Repeat Password -->
+                <div class="form__entry">
+
+                    <div class="entry__name">
+                        Repeat Password
+                    </div>
+
+                    <input type="password" class="entry" placeholder="Repeat Password" [(ngModel)]="repeatPassword"
+                        (input)="emptyRepeatPassword = false; passwordsMatch = true" [ngStyle]="{borderColor: ((password != repeatPassword) && (!emptyRepeatPassword)) ? 'red' : 'black'}">
+
+                    <div class="entry__alert" *ngIf="emptyRepeatPassword">
+                        Please fill in this field
+                    </div>
+                    <div class="entry__alert" *ngIf="!passwordsMatch">
+                        Passwords don't match
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form__buttons">
+
+                <button class="button__create" (click)="signup()">Create</button>
+
+            </div>
+
+        </div>
+    </div>
+</body>
